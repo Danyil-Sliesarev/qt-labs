@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "annotation_method": "Manually inspected visible objects and bounding boxes in the supplied, resized photographs.",
+  "images": [
+    {
+      "file": "bicycles.jpg",
+      "expected_objects": [
+        {"class_name": "bicycle", "bbox": {"x1": 0, "y1": 100, "x2": 500, "y2": 500}},
+        {"class_name": "bicycle", "bbox": {"x1": 400, "y1": 90, "x2": 955, "y2": 515}}
+      ]
+    },
+    {
+      "file": "bottle.jpg",
+      "expected_objects": [
+        {"class_name": "bottle", "bbox": {"x1": 260, "y1": 20, "x2": 680, "y2": 1279}}
+      ]
+    },
+    {
+      "file": "bus.jpg",
+      "expected_objects": [
+        {"class_name": "bus", "bbox": {"x1": 185, "y1": 120, "x2": 725, "y2": 525}},
+        {"class_name": "car", "bbox": {"x1": 770, "y1": 285, "x2": 958, "y2": 375}},
+        {"class_name": "car", "bbox": {"x1": 136, "y1": 289, "x2": 190, "y2": 326}},
+        {"class_name": "person", "bbox": {"x1": 62, "y1": 290, "x2": 79, "y2": 328}},
+        {"class_name": "person", "bbox": {"x1": 934, "y1": 282, "x2": 955, "y2": 337}}
+      ]
+    },
+    {
+      "file": "cat.jpg",
+      "expected_objects": [
+        {"class_name": "cat", "bbox": {"x1": 55, "y1": 140, "x2": 855, "y2": 620}},
+        {"class_name": "couch", "bbox": {"x1": 0, "y1": 0, "x2": 960, "y2": 685}}
+      ]
+    },
+    {
+      "file": "dog.jpg",
+      "expected_objects": [
+        {"class_name": "dog", "bbox": {"x1": 35, "y1": 105, "x2": 850, "y2": 720}}
+      ]
+    }
+  ]
+}
