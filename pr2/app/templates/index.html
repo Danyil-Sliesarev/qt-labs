@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <title>Local AI Object Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Local Vision home">
+          <span class="brand-mark" aria-hidden="true">◎</span>
+          <span>LOCAL<span class="brand-light">VISION</span></span>
+        </a>
+        <span class="local-badge"><span></span> Runs on your device</span>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">PRIVATE BY DESIGN · POWERED BY YOLO</p>
+        <h1>See what's<br><span>in your image.</span></h1>
+        <p class="intro-copy">Detect everyday objects with AI that runs locally. Your images stay on this machine.</p>
+      </section>
+
+      <section class="workspace" aria-label="Object detection workspace">
+        <div class="panel upload-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="step-label">01 / INPUT</p>
+              <h2>Choose an image</h2>
+            </div>
+            <span class="format-hint">JPG · PNG · WEBP · max 10 MB</span>
+          </div>
+
+          <input id="image-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp" hidden>
+          <button id="drop-zone" class="drop-zone" type="button" aria-label="Choose or drop an image">
+            <span class="upload-icon" aria-hidden="true">↑</span>
+            <span class="drop-title">Drop your image here</span>
+            <span class="drop-subtitle">or <span class="browse-link">browse files</span></span>
+            <span class="drop-limit">Supports images up to 10 MB</span>
+          </button>
+          <div id="preview-wrap" class="preview-wrap" hidden>
+            <div class="image-stage">
+              <img id="image-preview" alt="Selected image preview">
+              <canvas id="detection-canvas" aria-hidden="true"></canvas>
+            </div>
+            <button id="remove-image" class="remove-image" type="button">Remove image</button>
+          </div>
+
+          <div class="controls">
+            <div class="threshold-heading">
+              <label for="confidence">Confidence threshold</label>
+              <output id="confidence-value" for="confidence">0.25</output>
+            </div>
+            <input id="confidence" type="range" min="0" max="1" value="0.25" step="0.01">
+            <div class="range-labels"><span>More detections</span><span>Higher certainty</span></div>
+          </div>
+          <button id="detect-button" class="detect-button" type="button" disabled>
+            <span id="button-label">Detect objects</span>
+            <span id="spinner" class="spinner" aria-hidden="true" hidden></span>
+            <span class="button-arrow" aria-hidden="true">→</span>
+          </button>
+          <p id="message" class="message" role="status" aria-live="polite"></p>
+        </div>
+
+        <aside class="panel results-panel" aria-live="polite">
+          <div class="panel-heading">
+            <div>
+              <p class="step-label">02 / RESULTS</p>
+              <h2>Detection report</h2>
+            </div>
+            <span id="result-status" class="result-status">WAITING</span>
+          </div>
+          <div id="empty-results" class="empty-results">
+            <span class="target-icon" aria-hidden="true">⌖</span>
+            <p>Your results will appear here</p>
+            <span>Choose an image to get started</span>
+          </div>
+          <div id="results" hidden>
+            <div class="metrics">
+              <div class="metric"><span>OBJECTS FOUND</span><strong id="object-count">0</strong></div>
+              <div class="metric"><span>INFERENCE TIME</span><strong><span id="inference-time">0</span><small> ms</small></strong></div>
+            </div>
+            <h3 class="detections-title">Detected objects</h3>
+            <ul id="detection-list" class="detection-list"></ul>
+            <p id="no-detections" class="no-detections" hidden>No objects met this confidence threshold. Try lowering it.</p>
+          </div>
+          <div class="privacy-note"><span aria-hidden="true">◆</span> Images are processed locally and never uploaded to a cloud AI service.</div>
+        </aside>
+      </section>
+
+      <footer><span>LOCALVISION</span><span>LOCAL INFERENCE · NO CLOUD AI</span></footer>
+    </main>
+    <script src="/static/script.js" defer></script>
+  </body>
+</html>
