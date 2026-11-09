@@ -1,0 +1,69 @@
+# Qt Creator user-specific files
+*.pro.user
+*.pro.user.*
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+.qmake.stash
+
+# CMake build output
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Qt-generated files
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.moc
+
+# C++ build artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.app/
+*.pdb
+
+# Qt and IDE caches
+.qt/
+*.qmlc
+*.jsc
+
+# Python virtual environments and bytecode
+.venv/
+venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Python test and tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Model weights and generated inference output
+*.pt
+*.pth
+runs/
+
+# IDE and operating system files
+.idea/
+.vscode/
+*.swp
+*.tmp
+Thumbs.db
+.DS_Store
